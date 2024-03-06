@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:mid_exam_app/launch_model.dart';
 import 'package:readmore/readmore.dart';
+import 'dart:math' as math;
 
 class homePage extends StatefulWidget {
   @override
@@ -92,6 +93,12 @@ class _homePageState extends State<homePage> {
                                       child: null,
                                     ),
                                     label: Text(i),
+                                    backgroundColor: Color.fromARGB(
+                                      math.Random().nextInt(255),
+                                      math.Random().nextInt(255),
+                                      math.Random().nextInt(255),
+                                      math.Random().nextInt(255),
+                                    ),
                                   ),
                               ]),
                               // Chip(
