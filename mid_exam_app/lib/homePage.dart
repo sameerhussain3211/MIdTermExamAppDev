@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:mid_exam_app/launch_model.dart';
 import 'package:readmore/readmore.dart';
@@ -79,36 +80,40 @@ class _homePageState extends State<homePage> {
                                   ),
                                 ],
                               ),
-                              Chip(
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
-                                avatar: CircleAvatar(
-                                  backgroundColor: Colors.grey.shade800,
-                                  child: null,
-                                ),
-                                label: Text("${item.payloadIds![0]}"),
-                              ),
-                              Chip(
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
-                                avatar: CircleAvatar(
-                                  backgroundColor: Colors.grey.shade800,
-                                  child: null,
-                                ),
-                                label: Text("${item.payloadIds![1]}"),
-                              ),
-                              Chip(
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
-                                avatar: CircleAvatar(
-                                  backgroundColor: Colors.grey.shade800,
-                                  child: null,
-                                ),
-                                label: Text("${item.payloadIds![1]}"),
-                              ),
+
+                              Wrap(children: [
+                                for (String i in item.payloadIds!)
+                                  Chip(
+                                    shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20))),
+                                    avatar: CircleAvatar(
+                                      backgroundColor: Colors.grey.shade800,
+                                      child: null,
+                                    ),
+                                    label: Text(i),
+                                  ),
+                              ]),
+                              // Chip(
+                              //   shape: const RoundedRectangleBorder(
+                              //       borderRadius:
+                              //           BorderRadius.all(Radius.circular(20))),
+                              //   avatar: CircleAvatar(
+                              //     backgroundColor: Colors.grey.shade800,
+                              //     child: null,
+                              //   ),
+                              //   label: Text("${item.payloadIds![1]}"),
+                              // ),
+                              // Chip(
+                              //   shape: const RoundedRectangleBorder(
+                              //       borderRadius:
+                              //           BorderRadius.all(Radius.circular(20))),
+                              //   avatar: CircleAvatar(
+                              //     backgroundColor: Colors.grey.shade800,
+                              //     child: null,
+                              //   ),
+                              //   label: Text("${item.payloadIds![1]}"),
+                              // ),
                               // grid.builder(
                               //     itemCount: item.payloadIds!.length,
                               //     itemBuilder: (context, index) {
